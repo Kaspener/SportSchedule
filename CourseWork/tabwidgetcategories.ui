@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TabWidgetCategories</class>
+ <widget class="QTabWidget" name="TabWidgetCategories">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>615</width>
+    <height>377</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TabWidget</string>
+  </property>
+  <property name="currentIndex">
+   <number>0</number>
+  </property>
+  <widget class="QWidget" name="swimTab">
+   <attribute name="title">
+    <string>Плавание</string>
+   </attribute>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTableWidget" name="swimTable">
+      <column>
+       <property name="text">
+        <string>ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Вид</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Бассейн</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>МСМК</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Новый столбец</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>МС</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>1 разряд</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>2 разряд</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>3 разряд</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>1 (юн)</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>2 (юн)</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>3 (юн)</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="skiTab">
+   <attribute name="title">
+    <string>Лыжные гонки</string>
+   </attribute>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <widget class="QTableWidget" name="skiTable"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="athleticsTab">
+   <attribute name="title">
+    <string>Легкая атлетика</string>
+   </attribute>
+   <layout class="QGridLayout" name="gridLayout_3">
+    <item row="0" column="0">
+     <widget class="QTableWidget" name="athleticsTable"/>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,1906 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1062</width>
+    <height>663</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Спортивная школа</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="scheduleTable">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="currentIndex">
+       <number>5</number>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <widget class="QWidget" name="athletesTab">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <attribute name="title">
+        <string>Спортсмены</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QPushButton" name="addAthleteButton">
+            <property name="toolTip">
+             <string>Добавить спортсмена</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resourses.qrc">
+              <normaloff>:/resourses/images/add.png</normaloff>:/resourses/images/add.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="editAthleteButton">
+            <property name="toolTip">
+             <string>Редактировать данные спортсмена</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resourses.qrc">
+              <normaloff>:/resourses/images/edit.png</normaloff>:/resourses/images/edit.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="deleteAthleteButton">
+            <property name="toolTip">
+             <string>Удалить спортсмена</string>
+            </property>
+            <property name="whatsThis">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resourses.qrc">
+              <normaloff>:/resourses/images/delete.png</normaloff>:/resourses/images/delete.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="refreshAthletesButton">
+            <property name="toolTip">
+             <string>Обновить</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resourses.qrc">
+              <normaloff>:/resourses/images/refresh.png</normaloff>:/resourses/images/refresh.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="updateCategories">
+            <property name="text">
+             <string>Обновить разряды</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSplitter" name="splitter">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <widget class="QTableWidget" name="athletesTable">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="contextMenuPolicy">
+            <enum>Qt::DefaultContextMenu</enum>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="editTriggers">
+            <set>QAbstractItemView::NoEditTriggers</set>
+           </property>
+           <property name="alternatingRowColors">
+            <bool>false</bool>
+           </property>
+           <property name="selectionMode">
+            <enum>QAbstractItemView::SingleSelection</enum>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <property name="gridStyle">
+            <enum>Qt::SolidLine</enum>
+           </property>
+           <property name="sortingEnabled">
+            <bool>true</bool>
+           </property>
+           <column>
+            <property name="text">
+             <string>ID</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Фамилия</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Имя</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Отчество</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Спортсмен</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Дата рождения</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Возраст</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Пол</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Вес (кг)</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Рост (см)</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Адрес</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Телефон</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Дата зачисления</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Тренер</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Разряд</string>
+            </property>
+           </column>
+          </widget>
+          <widget class="QWidget" name="layoutWidget">
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QTabWidget" name="tabWidget_3">
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <widget class="QWidget" name="contactsAthleteTab">
+               <attribute name="title">
+                <string>Контакты</string>
+               </attribute>
+               <layout class="QHBoxLayout" name="horizontalLayout_4">
+                <item>
+                 <widget class="QTableWidget" name="contactsAthleteTable">
+                  <property name="editTriggers">
+                   <set>QAbstractItemView::NoEditTriggers</set>
+                  </property>
+                  <property name="selectionMode">
+                   <enum>QAbstractItemView::SingleSelection</enum>
+                  </property>
+                  <property name="selectionBehavior">
+                   <enum>QAbstractItemView::SelectRows</enum>
+                  </property>
+                  <property name="sortingEnabled">
+                   <bool>true</bool>
+                  </property>
+                  <column>
+                   <property name="text">
+                    <string>ID</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Контакт</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Кем приходится</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Место работы</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Должность</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Телефон</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Email</string>
+                   </property>
+                  </column>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_4">
+                  <item>
+                   <widget class="QPushButton" name="addContactAthleteButton">
+                    <property name="text">
+                     <string>Добавить</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="changeContactAthleteButton">
+                    <property name="text">
+                     <string>Изменить</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="deleteContactAthleteButton">
+                    <property name="text">
+                     <string>Удалить</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="verticalSpacer_3">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="resultsAthleteTab">
+               <attribute name="title">
+                <string>Результаты</string>
+               </attribute>
+               <layout class="QVBoxLayout" name="verticalLayout_6">
+                <item>
+                 <widget class="QTableWidget" name="resultsAthleteTable">
+                  <property name="editTriggers">
+                   <set>QAbstractItemView::NoEditTriggers</set>
+                  </property>
+                  <property name="selectionMode">
+                   <enum>QAbstractItemView::SingleSelection</enum>
+                  </property>
+                  <property name="selectionBehavior">
+                   <enum>QAbstractItemView::SelectRows</enum>
+                  </property>
+                  <property name="sortingEnabled">
+                   <bool>true</bool>
+                  </property>
+                  <column>
+                   <property name="text">
+                    <string>ID</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Дата</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Соревнование</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Дистанция</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Бассейн</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Заплыв</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Дорожка</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Результат</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Место</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Выполненный разряд</string>
+                   </property>
+                  </column>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTabWidget" name="tabWidget_2">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>300</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <widget class="QWidget" name="photoTab">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>294</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="layoutDirection">
+                <enum>Qt::LeftToRight</enum>
+               </property>
+               <attribute name="title">
+                <string>Фото</string>
+               </attribute>
+               <layout class="QHBoxLayout" name="horizontalLayout_2">
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout">
+                  <property name="sizeConstraint">
+                   <enum>QLayout::SetMinimumSize</enum>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="athletPhoto">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>240</width>
+                      <height>320</height>
+                     </size>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::Box</enum>
+                    </property>
+                    <property name="text">
+                     <string>photo</string>
+                    </property>
+                    <property name="textFormat">
+                     <enum>Qt::AutoText</enum>
+                    </property>
+                    <property name="scaledContents">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="verticalSpacer_2">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="competitionsTab">
+       <attribute name="title">
+        <string>Соревнования</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_6">
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QPushButton" name="addCometitionButton">
+            <property name="toolTip">
+             <string>Добавить</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resourses.qrc">
+              <normaloff>:/resourses/images/add.png</normaloff>:/resourses/images/add.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="editCometitionButton">
+            <property name="toolTip">
+             <string>Редактировать</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resourses.qrc">
+              <normaloff>:/resourses/images/edit.png</normaloff>:/resourses/images/edit.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="deleteCometitionButton_2">
+            <property name="toolTip">
+             <string>Удалить</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resourses.qrc">
+              <normaloff>:/resourses/images/delete.png</normaloff>:/resourses/images/delete.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="refreshCometitionButton">
+            <property name="toolTip">
+             <string>Обновить</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resourses.qrc">
+              <normaloff>:/resourses/images/refresh.png</normaloff>:/resourses/images/refresh.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0">
+         <widget class="QSplitter" name="splitter_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <widget class="QWidget" name="gridLayoutWidget">
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="0" column="0">
+             <widget class="QTableWidget" name="competitionsTable">
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
+              <property name="selectionMode">
+               <enum>QAbstractItemView::SingleSelection</enum>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectRows</enum>
+              </property>
+              <property name="sortingEnabled">
+               <bool>true</bool>
+              </property>
+              <column>
+               <property name="text">
+                <string>ID</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Наименование</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Категория</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Дата начала</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Дата окончания</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Страна</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Город</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Место</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Статус</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="gridLayoutWidget_2">
+           <layout class="QGridLayout" name="gridLayout_5">
+            <item row="0" column="0">
+             <widget class="QTabWidget" name="tabWidget_4">
+              <property name="currentIndex">
+               <number>1</number>
+              </property>
+              <widget class="QWidget" name="judgesTab">
+               <attribute name="title">
+                <string>Судьи</string>
+               </attribute>
+               <layout class="QGridLayout" name="gridLayout_7">
+                <item row="0" column="0">
+                 <widget class="QTableWidget" name="judgesTable">
+                  <property name="editTriggers">
+                   <set>QAbstractItemView::NoEditTriggers</set>
+                  </property>
+                  <property name="selectionMode">
+                   <enum>QAbstractItemView::SingleSelection</enum>
+                  </property>
+                  <property name="selectionBehavior">
+                   <enum>QAbstractItemView::SelectRows</enum>
+                  </property>
+                  <property name="sortingEnabled">
+                   <bool>true</bool>
+                  </property>
+                  <column>
+                   <property name="text">
+                    <string>ID</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Тип</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>ФИО</string>
+                   </property>
+                  </column>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <layout class="QVBoxLayout" name="verticalLayout_7">
+                  <item>
+                   <widget class="QPushButton" name="addJudgeButton">
+                    <property name="text">
+                     <string>Добавить</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="changeJudgeButton">
+                    <property name="text">
+                     <string>Изменить</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="deleteJudgeButton">
+                    <property name="text">
+                     <string>Удалить</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="verticalSpacer_5">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="participantsTab">
+               <attribute name="title">
+                <string>Участники</string>
+               </attribute>
+               <layout class="QGridLayout" name="gridLayout_8">
+                <item row="0" column="0">
+                 <widget class="QSplitter" name="splitter_3">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <widget class="QWidget" name="horizontalLayoutWidget">
+                   <layout class="QHBoxLayout" name="horizontalLayout_3">
+                    <item>
+                     <widget class="QTableWidget" name="participantsParticipantsTable">
+                      <property name="editTriggers">
+                       <set>QAbstractItemView::NoEditTriggers</set>
+                      </property>
+                      <property name="selectionMode">
+                       <enum>QAbstractItemView::SingleSelection</enum>
+                      </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
+                      </property>
+                      <property name="sortingEnabled">
+                       <bool>true</bool>
+                      </property>
+                      <column>
+                       <property name="text">
+                        <string>ID</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Спортсмен</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Тренер</string>
+                       </property>
+                      </column>
+                     </widget>
+                    </item>
+                    <item>
+                     <layout class="QVBoxLayout" name="verticalLayout_2">
+                      <item>
+                       <widget class="QPushButton" name="addParticipantButton">
+                        <property name="text">
+                         <string>Добавить</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="removeParticipantButton">
+                        <property name="text">
+                         <string>Удалить</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <spacer name="verticalSpacer">
+                        <property name="orientation">
+                         <enum>Qt::Vertical</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>20</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="horizontalLayoutWidget_2">
+                   <layout class="QHBoxLayout" name="horizontalLayout_5">
+                    <item>
+                     <widget class="QTableWidget" name="participantsResultsTable">
+                      <property name="editTriggers">
+                       <set>QAbstractItemView::NoEditTriggers</set>
+                      </property>
+                      <property name="selectionMode">
+                       <enum>QAbstractItemView::SingleSelection</enum>
+                      </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectRows</enum>
+                      </property>
+                      <property name="sortingEnabled">
+                       <bool>true</bool>
+                      </property>
+                      <column>
+                       <property name="text">
+                        <string>ID</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Дистанция</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Бассейн</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Спортсмен</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Заплыв</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Дорожка</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Результат</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Место</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Выполненный разряд</string>
+                       </property>
+                      </column>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QGroupBox" name="groupBox">
+                      <property name="autoFillBackground">
+                       <bool>false</bool>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QGroupBox { 
+     border: 0px; 
+ } 
+</string>
+                      </property>
+                      <property name="title">
+                       <string/>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                      </property>
+                      <property name="flat">
+                       <bool>false</bool>
+                      </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_5">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QPushButton" name="addResultButton">
+                         <property name="text">
+                          <string>Добавить</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="changeResultButton">
+                         <property name="text">
+                          <string>Изменить</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="deleteResultButton">
+                         <property name="text">
+                          <string>Удалить</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <spacer name="verticalSpacer_7">
+                         <property name="orientation">
+                          <enum>Qt::Vertical</enum>
+                         </property>
+                         <property name="sizeHint" stdset="0">
+                          <size>
+                           <width>20</width>
+                           <height>40</height>
+                          </size>
+                         </property>
+                        </spacer>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="resultsTab">
+       <attribute name="title">
+        <string>Результаты</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_9">
+        <item row="1" column="0">
+         <widget class="QTableWidget" name="resultsTable">
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::SingleSelection</enum>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <property name="sortingEnabled">
+           <bool>true</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Дата</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Соревнование</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Дистанция</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Бассейн</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Спортсмен</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Заплыв</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Дорожка</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Результат</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Место</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Выполненный разряд</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QPushButton" name="refreshResultButton">
+            <property name="toolTip">
+             <string>Обновить</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resourses.qrc">
+              <normaloff>:/resourses/images/refresh.png</normaloff>:/resourses/images/refresh.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="scheduleTab">
+       <attribute name="title">
+        <string>Расписание</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_10">
+        <item row="1" column="0">
+         <widget class="QTableWidget" name="scheduleClassesTable">
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::SingleSelection</enum>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <property name="sortingEnabled">
+           <bool>true</bool>
+          </property>
+          <attribute name="verticalHeaderDefaultSectionSize">
+           <number>60</number>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Тренер</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Понедельник</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Вторник</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Среда</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Четверг</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Пятница</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Суббота</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Воскресенье</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_10">
+          <item>
+           <widget class="QPushButton" name="addScheduleButton">
+            <property name="toolTip">
+             <string>Добавить</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resourses.qrc">
+              <normaloff>:/resourses/images/add.png</normaloff>:/resourses/images/add.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="changeScheduleButton">
+            <property name="toolTip">
+             <string>Редактировать</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resourses.qrc">
+              <normaloff>:/resourses/images/edit.png</normaloff>:/resourses/images/edit.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="deleteScheduleButton">
+            <property name="toolTip">
+             <string>Удалить</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resourses.qrc">
+              <normaloff>:/resourses/images/delete.png</normaloff>:/resourses/images/delete.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="refreshScheduleButton">
+            <property name="toolTip">
+             <string>Обновить</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resourses.qrc">
+              <normaloff>:/resourses/images/refresh.png</normaloff>:/resourses/images/refresh.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="categoriesTab">
+       <attribute name="title">
+        <string>Разрядные нормативы</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_11">
+        <item row="0" column="0">
+         <widget class="QTableWidget" name="categoriesTable">
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::SingleSelection</enum>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <property name="sortingEnabled">
+           <bool>true</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Вид</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Бассейн</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Пол</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>МСМК</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>МС</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>КМС</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>1 разряд</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>2 разряд</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>3 разряд</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>1 (юн.)</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>2 (юн.)</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>3 (юн.)</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="inventoryTab">
+       <attribute name="title">
+        <string>Инвентарь</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="1" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <item>
+           <widget class="QTreeWidget" name="inventotyTree">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <property name="lineWidth">
+             <number>1</number>
+            </property>
+            <property name="textElideMode">
+             <enum>Qt::ElideLeft</enum>
+            </property>
+            <property name="rootIsDecorated">
+             <bool>true</bool>
+            </property>
+            <column>
+             <property name="text">
+              <string>Бассейны</string>
+             </property>
+            </column>
+            <item>
+             <property name="text">
+              <string>Все</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Бассейн 1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Бассейн 2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Бассейн 3</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="inventoryTable">
+            <property name="editTriggers">
+             <set>QAbstractItemView::NoEditTriggers</set>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::SingleSelection</enum>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectRows</enum>
+            </property>
+            <property name="sortingEnabled">
+             <bool>true</bool>
+            </property>
+            <column>
+             <property name="text">
+              <string>ID</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Инвентарь</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Количество</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Помещение</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_13">
+          <item>
+           <widget class="QPushButton" name="addInventoryButton">
+            <property name="toolTip">
+             <string>Добавить</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resourses.qrc">
+              <normaloff>:/resourses/images/add.png</normaloff>:/resourses/images/add.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="changeInventoryButton">
+            <property name="toolTip">
+             <string>Изменить</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resourses.qrc">
+              <normaloff>:/resourses/images/edit.png</normaloff>:/resourses/images/edit.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="deleteInventoryButton">
+            <property name="toolTip">
+             <string>Удалить</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resourses.qrc">
+              <normaloff>:/resourses/images/delete.png</normaloff>:/resourses/images/delete.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="refreshInventoryButton">
+            <property name="toolTip">
+             <string>Обновить</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resourses.qrc">
+              <normaloff>:/resourses/images/refresh.png</normaloff>:/resourses/images/refresh.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="coachesTab">
+       <attribute name="title">
+        <string>Тренеры</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_13">
+        <item row="1" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <item>
+           <widget class="QTableWidget" name="coachesTable">
+            <property name="editTriggers">
+             <set>QAbstractItemView::NoEditTriggers</set>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::SingleSelection</enum>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectRows</enum>
+            </property>
+            <property name="sortingEnabled">
+             <bool>true</bool>
+            </property>
+            <column>
+             <property name="text">
+              <string>ID</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>ФИО</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Должность</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Дата рождения</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Телефон</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Email</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTabWidget" name="tabWidget">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>300</width>
+              <height>0</height>
+             </size>
+            </property>
+            <widget class="QWidget" name="photoCoachesTab">
+             <attribute name="title">
+              <string>Фото</string>
+             </attribute>
+             <layout class="QVBoxLayout" name="verticalLayout_8">
+              <item>
+               <widget class="QLabel" name="coachePhoto">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>240</width>
+                  <height>320</height>
+                 </size>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Box</enum>
+                </property>
+                <property name="text">
+                 <string>photo</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::AutoText</enum>
+                </property>
+                <property name="scaledContents">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_6">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_14">
+          <item>
+           <widget class="QPushButton" name="addCoacheButton">
+            <property name="toolTip">
+             <string>Добавить</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resourses.qrc">
+              <normaloff>:/resourses/images/add.png</normaloff>:/resourses/images/add.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="changeCoacheButton">
+            <property name="toolTip">
+             <string>Изменить</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resourses.qrc">
+              <normaloff>:/resourses/images/edit.png</normaloff>:/resourses/images/edit.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="deleteCoacheButton">
+            <property name="toolTip">
+             <string>Удалить</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resourses.qrc">
+              <normaloff>:/resourses/images/delete.png</normaloff>:/resourses/images/delete.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="refreshCoacheButton">
+            <property name="toolTip">
+             <string>Обновить</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resourses.qrc">
+              <normaloff>:/resourses/images/refresh.png</normaloff>:/resourses/images/refresh.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1062</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Меню</string>
+    </property>
+    <addaction name="newDataBase"/>
+    <addaction name="exportDataBase"/>
+    <addaction name="importDataBase"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Справка</string>
+    </property>
+    <addaction name="help"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="newDB">
+   <property name="text">
+    <string>Новая база данных</string>
+   </property>
+  </action>
+  <action name="exportDB">
+   <property name="text">
+    <string>Экспорт базы данных</string>
+   </property>
+  </action>
+  <action name="importDB">
+   <property name="text">
+    <string>Импорт базы данных</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>Новая база данных</string>
+   </property>
+  </action>
+  <action name="newDataBase">
+   <property name="text">
+    <string>Новая база данных</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="exportDataBase">
+   <property name="text">
+    <string>Экспорт базы данных</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="importDataBase">
+   <property name="text">
+    <string>Импорт базы данных</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="help">
+   <property name="text">
+    <string>Помощь</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="resourses.qrc"/>
+ </resources>
+ <connections/>
+</ui>
